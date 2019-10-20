@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HardDetails</title>
+</head>
+
+<body>
+    <script>
+        let computer = {};
+        let systemUnit = {};
+        let motherBoard = {};
+        let CPU = {};
+        let RAM = {};
+        let GPU = {};
+        let audioAdapter = {};
+        let storage = [];
+        let graphic = {};
+        let keyboard = {};
+        let touchpad = {};
+        let operatingSystem = {};
+        let printersQueue = [];
+
+        CPU["processorName"] = "Intel(R) Core(TM) i7-7500U CPU 2.70GHz";
+        CPU["physicalNum"] = "1";
+        CPU["coresNum"] = "2";
+        CPU["threadsNum"] = "4";
+        CPU["generation"] = "7500U";
+        CPU["clockSpeed"] = "2.70GHz";
+        CPU["caches"] = [{
+            "type": "L1",
+            "amount": "32KB"
+        }];
+
+        RAM["amount"] = "7913416 KiB";
+        RAM["swapTotal"] = "1024MiB";
+        RAM["slotType"] = "DIMM";
+        RAM["slotNum"] = "2";
+        RAM["slots"] = [{
+            "amount": "1GiB",
+            "available": "true"
+        }];
+
+        GPU["name"] = "Intel(R) HD Graphics 620";
+        audioAdapter["name"] = "HDA Intel PCH";
+
+        motherBoard["brand"] = "Dell Inc. 0J0F4J";
+        motherBoard["CPU"] = CPU;
+        motherBoard["RAM"] = RAM;
+        motherBoard["GPU"] = GPU;
+        motherBoard["audioAdapter"] = audioAdapter;
+
+        storage.push({
+            "name": "WDC WD10JPVX-75J",
+            "conector": "SATA",
+            "partitions": [{
+                "mountPoint": "/",
+                "type": "Ext4",
+                "amount": "400GiB",
+                "available": "100GiB"
+            }]
+        });
+
+        systemUnit["headphoneConector"] = "true";
+        systemUnit["microphoneConector"] = "true";
+        systemUnit["HDMIConector"] = "true";
+        systemUnit["webCam"] = "true";
+        systemUnit["USBAmount"] = "3";
+        systemUnit["motherBoard"] = motherBoard;
+        systemUnit["storage"] = storage;
+
+        graphic["resolution"] = "1366x768";
+        graphic["interface"] = "internal";
+        keyboard["name"] = "AT Translated Set 2";
+        touchpad["name"] = "SynPS/2 Synaptics";
+
+        printersQueue.push({
+            "name": "Lexmark-MX730"
+        });
+
+        operatingSystem["name"] = "Lubuntu 18.04.2 LTS";
+        operatingSystem["kernel"] = "Linux 5.15.0";
+        operatingSystem["hostName"] = "pc01";
+        operatingSystem["users"] = ['root'];
+        operatingSystem["dateTime"] = "20/10/2019 01:34:23";
+        operatingSystem["printersQueue"] = printersQueue;
+
+        computer["type"] = "Notebook";
+        computer["systemUnit"] = systemUnit;
+        computer["graphic"] = graphic;
+        computer["keyboard"] = keyboard;
+        computer["touchpad"] = touchpad;
+        computer["operatingSystem"] = operatingSystem;
+
+        console.log(computer);
+    </script>
+</body>
+
+</html>
